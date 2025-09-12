@@ -55,25 +55,23 @@ export default function Header({ onCategorySelect }) {
       <nav className="px-4 py-2 flex items-center justify-center relative">
         <ul className="flex space-x-8 items-center">
           {[
-            { key: "nonveg", label: "Non-Veg", items: ["Chicken Curry", "Mutton Biryani", "Fish Fry"] },
-            { key: "veg", label: "Veg", items: ["Paneer Butter Masala", "Mixed Veg Curry", "Dal Tadka"] },
-            { key: "indian", label: "Indian", items: ["Roti/Naan", "Biryani", "Paneer Tikka"] },
-            { key: "beverages", label: "Beverages", items: ["Lassi", "Tea", "Coffee"] },
-            { key: "desserts", label: "Desserts", items: ["Gulab Jamun", "Ice Cream", "Rasmalai"] },
+            { key: "about", label: "About Us" },
+            { key: "contact", label: "Contact Us" },
+            { key: "service", label: "Service" },
           ].map(({ key, label, items }) => (
             <li key={key} className="relative">
               <button
                 onClick={() => toggleDropdown(key)}
-                className="font-merienda hover:text-orange-700 dark:hover:text-orange-400 text-gray-800 dark:text-gray-200"
+                className="font-merienda hover:text-orange-700 dark:hover:text-green-400 text-gray-800 dark:text-gray-200"
               >
-                {label}‣
+                {label}
               </button>
               {openDropdown === key && (
                 <ul className="absolute top-full left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50">
                   {items.map((item) => (
                     <li
                       key={item}
-                      className="font-merienda px-4 py-2 hover:bg-orange-100 cursor-pointer"
+                      className="font-merienda px-4 py-2 hover:bg-green-100 cursor-pointer"
                     >
                       {item}
                     </li>
