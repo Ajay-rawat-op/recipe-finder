@@ -4,17 +4,12 @@ const HeroSection = () => {
 
     return (
         <div className="relative w-full h-screen">
-            {/* Background Image */}
             <img
                 src="/images/pexels-photo-8818667.jpeg"
                 alt="Category Background"
                 className="absolute inset-0 w-full h-full object-cover z-0 transition-all duration-500 transform scale-x-[-1]"
             />
-
-            {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-
-            {/* Text Content */}
             <div className="relative z-20 text-left text-white px-10 py-20 ml-10">
                 <div className="max-w-lg">
                     <h1 className="text-5xl font-merienda mb-8">Namaste, my spice-loving foodies!</h1>

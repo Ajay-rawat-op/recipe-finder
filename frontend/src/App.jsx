@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import RecipeSearch from "./components/RecipeSearch";
+import TrendingItemsCarousel from "./components/TrendingItemsCarousel";
 
 
 export default function App() {
@@ -13,6 +14,7 @@ const [selectedCategory, setSelectedCategory] = useState("veg");
       <Header onCategorySelect={setSelectedCategory} />
       <HeroSection selectedCategory={selectedCategory} />
       <RecipeSearch/>
+      <TrendingItemsCarousel/>
       <Footer />
     </div>
   );

@@ -8,7 +8,6 @@ const RecipeSearch = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [loadingDetails, setLoadingDetails] = useState(false);
 
-  // Common function to fetch recipes based on a search query
   const fetchRecipes = async (searchQuery) => {
     if (!searchQuery.trim()) {
       setError("Please enter a search term");
@@ -26,7 +25,6 @@ const RecipeSearch = () => {
       if (data?.data?.recipes?.length === 0) {
         setError("No recipes found, try something else.");
       }
-
       setRecipes(data?.data?.recipes || []);
     } catch (err) {
       setError("Failed to fetch recipes. Please try again.");
@@ -36,12 +34,10 @@ const RecipeSearch = () => {
     }
   };
 
-  // Call default search when component mounts
   useEffect(() => {
-    fetchRecipes("ice-cream"); // Default query to show recipes on load
+    fetchRecipes("ice-cream");
   }, []);
 
-  // Called on button click or Enter key press
   const handleSearch = () => {
     fetchRecipes(query);
   };
@@ -69,7 +65,6 @@ const RecipeSearch = () => {
         Recipe Search
       </h1>
 
-      {/* Search Box */}
       <div className="w-full max-w-3xl flex gap-4 mb-8">
         <input
           type="text"
@@ -88,21 +83,18 @@ const RecipeSearch = () => {
         </button>
       </div>
 
-      {/* Error Message */}
       {error && (
         <p className="text-red-600 dark:text-red-400 mb-6 font-semibold text-center">
           {error}
         </p>
       )}
 
-      {/* Loading */}
       {loading && (
         <p className="text-orange-700 dark:text-orange-300 font-medium mb-6 animate-pulse text-center">
           Loading recipes...
         </p>
       )}
 
-      {/* Recipe Cards */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-6xl overflow-y-auto"
         style={{ maxHeight: "65vh" }}
@@ -133,14 +125,12 @@ const RecipeSearch = () => {
           ))}
       </div>
 
-      {/* Loading Details */}
       {loadingDetails && (
         <p className="mt-10 text-orange-700 dark:text-orange-300 font-medium animate-pulse text-center">
           Loading details...
         </p>
       )}
 
-      {/* Selected Recipe Details */}
       {selectedRecipe && !loadingDetails && (
         <div className="mt-12 w-full max-w-5xl bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8">
           <h2 className="text-3xl font-extrabold mb-6 text-orange-800 dark:text-orange-400">
