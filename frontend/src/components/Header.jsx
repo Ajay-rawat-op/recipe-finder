@@ -46,9 +46,9 @@ export default function Header({ onCategorySelect }) {
     <nav ref={navRef} className="shadow-md px-4 py-3 flex justify-between items-center">
       <div className="flex items-center space-x-2">
         <div className="bg-orange-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">
-          T
+          R
         </div>
-        <p className="text-xl font-bold text-orange-600">Tasty Bites</p>
+        <p className="text-xl font-bold text-orange-600">Recipe-Finder</p>
       </div>
 
       {/* Nav Menu */}

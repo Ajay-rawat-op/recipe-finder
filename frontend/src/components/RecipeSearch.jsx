@@ -19,7 +19,7 @@ const RecipeSearch = () => {
     setSelectedRecipe(null);
     try {
       const res = await fetch(
-        `https://forkify-api.jonas.io/api/v2/recipes?search=${searchQuery}`
+        `http://localhost:5000/api/search?q=${searchQuery}`
       );
       const data = await res.json();
 
@@ -51,7 +51,7 @@ const RecipeSearch = () => {
     setError("");
     try {
       const res = await fetch(
-        `https://forkify-api.jonas.io/api/v2/recipes/${id}`
+        `http://localhost:5000/api/recipe/${id}`
       );
       const data = await res.json();
       setSelectedRecipe(data?.data?.recipe);
