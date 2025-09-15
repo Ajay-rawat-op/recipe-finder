@@ -21,7 +21,6 @@ const RecipeSearch = () => {
         `http://localhost:5000/api/search?q=${searchQuery}`
       );
       const data = await res.json();
-
       if (data?.data?.recipes?.length === 0) {
         setError("No recipes found, try something else.");
       }
